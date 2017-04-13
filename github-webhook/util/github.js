@@ -8,7 +8,7 @@ const github = githubhook({
 });
 
 github.on('push', (repo, ref, data) => {
-  console.log(repo, ref, data);
+  console.log('event!');
 });
 
 github.listen();
