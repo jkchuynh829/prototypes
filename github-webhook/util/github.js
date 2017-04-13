@@ -1,12 +1,14 @@
 const githubhook = require('githubhook');
 
 const github = githubhook({
-  host: '0.0.0.0',
+  host: 'localhost',
   port: 8082,
   path: '/pushchanges',
-  secret: '123456'
+  secret: 'tigers'
 });
 
 github.on('push', (repo, ref, data) => {
   console.log(repo, ref, data);
 });
+
+github.listen();
